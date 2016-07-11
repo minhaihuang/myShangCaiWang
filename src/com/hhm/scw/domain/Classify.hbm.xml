@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.hhm.scw.domain.Classify" table="Classify">
+		<id name="classifyId">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="classifyName" column="classifyName"></property>
+	
+	<!-- 多对多关联关系,与商品关联-->
+		<set name="goodsSet" table="classifyGoods" lazy="false" cascade="persist" inverse="true" >
+			<key column="classifyId"></key><!-- 本类的key -->
+			<many-to-many class="com.hhm.scw.domain.Goods" column="goodsId"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

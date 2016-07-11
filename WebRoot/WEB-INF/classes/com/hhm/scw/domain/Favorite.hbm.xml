@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.hhm.scw.domain.Favorite" table="Favorite">
+		<id name="favoriteId">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="goodsId" column="goodsId"></property>
+		<property name="goodsName" column="goodsName"></property>
+		<property name="price" column="price"></property>
+		<property name="goodsMinImgPath" column="goodsMinImgPath"></property>
+		
+		
+		<many-to-one name="user" column="userId" class="com.hhm.scw.domain.User"></many-to-one>
+	</class>
+</hibernate-mapping>

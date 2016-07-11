@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		                    http://www.springframework.org/schema/context 
+		                    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		                    http://www.springframework.org/schema/tx 
+		                    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		                    http://www.springframework.org/schema/aop 
+		                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<!-- 这是dao层的spring配置文件 -->
+	<!-- 顶层Dao -->
+	<bean name="daoImpl"  class="com.hhm.scw.dao.daoImpl.DaoImpl"  abstract="true">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 配置 ScwTestDao-->
+	<bean id="scwTestDao" class="com.hhm.scw.dao.daoImpl.ScwTestDaoImpl" parent="daoImpl">
+	</bean>
+	
+	<!-- 配置 UserDao-->
+	<bean id="userDao" class="com.hhm.scw.dao.daoImpl.UserDaoImpl" parent="daoImpl">
+	</bean>
+	
+	<!-- 配置 GoodsDao-->
+	<bean id="goodsDao" class="com.hhm.scw.dao.daoImpl.GoodsDaoImpl" parent="daoImpl">
+	</bean>
+	
+	<!-- 配置 CategoryDao-->
+	<bean id="categoryDao" class="com.hhm.scw.dao.daoImpl.CategoryDaoImpl" parent="daoImpl">
+	</bean>
+	
+	<!-- 配置 ClassifyDao-->
+	<bean id="classifyDao" class="com.hhm.scw.dao.daoImpl.ClassifyDaoImpl" parent="daoImpl">
+	</bean>
+	
+	<!-- 配置 AddressDao-->
+	<bean id="addressDao" class="com.hhm.scw.dao.daoImpl.AddressDaoImpl" parent="daoImpl">
+	</bean>
+	
+	<!-- 配置 OrderDao-->
+	<bean id="orderDao" class="com.hhm.scw.dao.daoImpl.OrderDaoImpl" parent="daoImpl">
+	</bean>
+	
+	<!-- 配置 FavoriteDao-->
+	<bean id="favoriteDao" class="com.hhm.scw.dao.daoImpl.FavoriteDaoImpl" parent="daoImpl">
+	</bean>
+</beans>

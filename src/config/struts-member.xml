@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+
+	<package name="member"  namespace="/member" extends="new-struts-default">
+
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="loginRegister" type="dispatcher">
+				/WEB-INF/page/member/loginRegister.jsp
+			</result>
+			
+			<result name="register" type="dispatcher">
+				/index.jsp
+			</result>
+			
+			<result name="registerError" type="dispatcher">
+				/WEB-INF/page/member/loginRegister.jsp
+			</result>
+			
+			<result name="loginError" type="dispatcher">
+				/WEB-INF/page/member/loginRegister.jsp
+			</result>
+			
+			<result name="login" type="dispatcher">
+				/index.jsp
+			</result>
+			
+			<result name="update" type="redirectAction">
+				member/myCountAction_memberInfo.action
+			</result>
+		</action>
+
+
+		<action name="cartAction_*" class="cartAction" method="{1}">
+			<result name="cart" type="dispatcher">
+				/WEB-INF/page/member/cart.jsp
+			</result>
+			
+			<result name="cartItemDelete" type="redirectAction">
+				member/cartAction_cart.action
+			</result>
+			
+			<result name="checkout" type="dispatcher">
+				/WEB-INF/page/member/checkout.jsp
+			</result>
+			
+			<result name="buy" type="redirectAction">
+				member/cartAction_cart.action
+			</result>
+			
+			<result name="index" type="dispatcher">
+				/head/index.jsp
+			</result>
+			
+			<result name="loginRegister" type="dispatcher">
+				/WEB-INF/page/member/loginRegister.jsp
+			</result>
+			
+			
+		</action>
+		
+		
+		
+		
+		<action name="addressAction_*" class="addressAction" method="{1}">
+			<result name="addressAdd" type="dispatcher">
+					/WEB-INF/page/member/addressAdd.jsp
+			</result>
+			
+			
+			<result name="addressEdit" type="dispatcher">
+					/WEB-INF/page/member/addressEdit.jsp
+			</result>
+			
+			<result name="add" type="redirectAction">
+					member/cartAction_checkout.action
+			</result>
+			
+			<result name="update" type="redirectAction">
+					member/cartAction_checkout.action
+			</result>
+			
+			<result name="deleteAddress" type="redirectAction" >
+					member/cartAction_checkout.action
+			</result>
+		</action>
+		
+		
+		
+		<action name="orderAction_*" class="orderAction" method="{1}">
+		
+			<result name="orderDetail" type="dispatcher">
+					/WEB-INF/page/member/orderDetail.jsp
+			</result>
+			
+			<result name="orderCreate" type="dispatcher">
+				/WEB-INF/page/member/orderCreate.jsp
+			</result>
+		</action>
+		
+		
+		
+		<action name="myCountAction_*" class="myCountAction" method="{1}">
+		
+			<result name="memberInfo" type="dispatcher">
+				/WEB-INF/page/member/memberInfo.jsp
+			</result>
+			
+			<result name="orderList" type="dispatcher">
+				/WEB-INF/page/member/orderList.jsp
+			</result>
+			
+			<result name="credit" type="dispatcher">
+				/WEB-INF/page/member/credit.jsp
+			</result>
+			
+			<result name="wishlist" type="dispatcher">
+				/WEB-INF/page/member/wishlist.jsp
+			</result>
+			
+			<result name="passwordUpdate" type="dispatcher">
+				/WEB-INF/page/member/passwordUpdate.jsp
+			</result>
+			
+			<result name="receiverAddress" type="dispatcher">
+				/WEB-INF/page/member/receiverAddress.jsp
+			</result>
+			
+			<result name="loginRegister" type="dispatcher">
+				/WEB-INF/page/member/loginRegister.jsp
+			</result>
+			
+			<result name="deleteOrder" type="redirectAction">
+				member/myCountAction_orderList.action
+			</result>
+			
+			<result name="loginRegisiter" type="dispatcher">
+				/WEB-INF/page/member/loginRegister.jsp
+			</result>
+			
+			<result name="myCountAddressEdit" type="dispatcher">
+				/WEB-INF/page/member/myCountAddressEdit.jsp
+			</result>
+			
+			
+			<result name="update" type="redirectAction">
+				member/myCountAction_receiverAddress.action
+			</result>
+			
+			<result name="deleteAddress" type="redirectAction">
+				member/myCountAction_receiverAddress.action
+			</result>
+		</action>
+		
+		<action name="favoriteAction_*" class="favoriteAction" method="{1}">
+			<result name="loginRegisiter" type="dispatcher">
+				/WEB-INF/page/member/loginRegister.jsp
+			</result>
+
+			<result name="deleteFavorite" type="redirectAction" >
+					member/myCountAction_wishlist.action
+			</result>
+		</action>
+	</package>
+
+
+</struts>

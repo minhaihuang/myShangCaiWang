@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.hhm.scw.domain.ScwTest" table="ScwTest">
+		<id name="caiId">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="caiName" column="caiName"></property>
+		<property name="price" column="price"></property>
+	</class>
+</hibernate-mapping>

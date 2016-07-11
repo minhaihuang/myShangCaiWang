@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+
+	<package name="goods"  namespace="/goods" extends="new-struts-default">
+
+		<action name="goodsAction_*" class="goodsAction" method="{1}">
+			<result name="goodsAdd" type="dispatcher">
+				/WEB-INF/page/goods/goodsAdd.jsp
+			</result>
+			
+			<result name="goodsSearch" type="dispatcher">
+				/WEB-INF/page/goods/goodsSearch.jsp
+			</result>
+			
+			<result name="goodsHome" type="dispatcher">
+				/WEB-INF/page/goods/goodsHome.jsp
+			</result>
+			
+			<result name="goodsDetail" type="dispatcher">
+				/WEB-INF/page/goods/goodsDetail.jsp
+			</result>
+			
+			<result name="goodsDelete" type="dispatcher">
+				/WEB-INF/page/goods/goodsHome.jsp
+			</result>
+			
+			<result name="goodsEdit" type="dispatcher">
+				/WEB-INF/page/goods/goodsEdit.jsp
+			</result>
+			
+			<result name="updateGoods" type="dispatcher">
+				/WEB-INF/page/goods/goodsHome.jsp
+			</result>
+			
+			<result name="input" type="dispatcher">
+				/error.jsp
+			</result>
+
+		</action>
+		
+		
+		
+		<action name="classifyAction_*" class="classifyAction" method="{1}">
+			
+			
+			<result name="goodsSearch" type="dispatcher">
+				/WEB-INF/page/goods/goodsSearch.jsp
+			</result>
+			
+			
+		</action>
+
+	</package>
+
+	
+
+</struts>

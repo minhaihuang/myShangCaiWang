@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.hhm.scw.domain.User" table="User">
+		<id name="userId">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="userName" column="userName"></property>
+		<property name="passWord" column="passWord"></property>
+		<property name="payPassWord" column="payPassWord"></property>
+		<property name="email" column="email"></property>
+		<property name="gender" column="gender"></property>
+		<property name="address" column="address"></property>
+		<property name="phone" column="phone"></property>	
+		<property name="totalGrade" column="totalGrade"></property>
+		<property name="postNumber" column="postNumber"></property>
+		<property name="birthday" column="birthday"></property>	
+		<property name="mobile" column="mobile"></property>	
+		
+		<set name="addressSet" inverse="true" cascade="all" lazy="false">
+			<key column="userId"></key>
+			<one-to-many class="com.hhm.scw.domain.Address"/>
+		</set>
+		
+		<set name="orderSet" inverse="true" cascade="all" lazy="false">
+			<key column="userId"></key>
+			<one-to-many class="com.hhm.scw.domain.Order"/>
+		</set>
+		
+		<set name="favoriteSet" inverse="true" cascade="all" lazy="false">
+			<key column="userId"></key>
+			<one-to-many class="com.hhm.scw.domain.Favorite"/>
+		</set>
+	</class>
+	
+</hibernate-mapping>

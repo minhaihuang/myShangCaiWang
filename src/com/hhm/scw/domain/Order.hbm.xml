@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.hhm.scw.domain.Order" table="Orders">
+		<id name="orderId">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="createDate" column="createDate"></property>
+		<property name="totalPrice" column="totalPrice"></property>
+		<property name="status" column="status"></property>
+		<property name="comment" column="comment"></property>
+	
+		<many-to-one name="user" column="userId" class="com.hhm.scw.domain.User"></many-to-one>
+	
+		
+		
+	</class>
+	
+</hibernate-mapping>
